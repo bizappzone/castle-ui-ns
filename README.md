@@ -1,11 +1,5 @@
-# @bizappzone/\* plugins
-
-```
-npm run setup
-npm start
-```
-
-- @bizappzone
+- [@bizappzone/castle-ns-button](packages/castle-ns-button/README.md)
+- [@bizappzone/castle-ns-icon](packages/castle-ns-icon/README.md)
 
 # How to use?
 

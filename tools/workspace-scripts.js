@@ -61,6 +61,20 @@ module.exports = {
     // packages
     // build output is always in dist/packages
     '@bizappzone': {
+      // @bizappzone/castle-ns-button
+      'castle-ns-button': {
+        build: {
+          script: 'nx run castle-ns-button:build.all',
+          description: '@bizappzone/castle-ns-button: Build',
+        },
+      },
+      // @bizappzone/castle-ns-icon
+      'castle-ns-icon': {
+        build: {
+          script: 'nx run castle-ns-icon:build.all',
+          description: '@bizappzone/castle-ns-icon: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,6 +85,14 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'castle-ns-button': {
+        script: 'nx run castle-ns-button:focus',
+        description: 'Focus on @bizappzone/castle-ns-button',
+      },
+      'castle-ns-icon': {
+        script: 'nx run castle-ns-icon:focus',
+        description: 'Focus on @bizappzone/castle-ns-icon',
+      },
       reset: {
         script: 'nx g @bizappzone/plugin-tools:focus-packages',
         description: 'Reset Focus',

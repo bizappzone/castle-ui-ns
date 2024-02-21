@@ -1,7 +1,9 @@
 {
   "main": "./src/main.ts",
   "dependencies": {
-    "@nativescript/core": "file:../../node_modules/@nativescript/core"
+    "@nativescript/core": "file:../../node_modules/@nativescript/core",
+    "@bizappzone/castle-ns-button": "file:../../dist/packages/castle-ns-button",
+    "@bizappzone/castle-ns-icon": "file:../../dist/packages/castle-ns-icon"
   },
   "devDependencies": {
     "@nativescript/android": "~8.6.0",

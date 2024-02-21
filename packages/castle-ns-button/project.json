@@ -1,0 +1,65 @@
+{
+  "name": "castle-ns-button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/castle-ns-button",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/castle-ns-button",
+        "tsConfig": "packages/castle-ns-button/tsconfig.json",
+        "packageJson": "packages/castle-ns-button/package.json",
+        "main": "packages/castle-ns-button/index.d.ts",
+        "assets": [
+          "packages/castle-ns-button/*.md",
+          "packages/castle-ns-button/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/castle-ns-button/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts castle-ns-button"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/castle-ns-button"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages castle-ns-button"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/castle-ns-button/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
