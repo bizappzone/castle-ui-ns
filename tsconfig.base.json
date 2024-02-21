@@ -23,7 +23,9 @@
       "@demo/shared": ["tools/demo/index.ts"],
       "@bizappzone/*": ["packages/*"],
       "@bizappzone/castle-ns-button": ["packages/castle-ns-button/index.d.ts"],
-      "@bizappzone/castle-ns-icon": ["packages/castle-ns-icon/index.d.ts"]
+      "@bizappzone/castle-ns-icon": ["packages/castle-ns-icon/index.d.ts"],
+      "@bizappzone/castle-ns-button/angular": ["packages/castle-ns-button/angular/index.ts"],
+      "@bizappzone/castle-ns-icon/angular": ["packages/castle-ns-icon/angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
